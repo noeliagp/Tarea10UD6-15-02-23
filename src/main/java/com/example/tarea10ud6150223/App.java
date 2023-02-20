@@ -12,7 +12,7 @@ public class App extends Application {
 
     // ATRIBUTOS
 
-    public static ArrayList<tareaModel> lista = new ArrayList<>();
+
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -26,4 +26,5 @@ public class App extends Application {
     public static void main(String[] args) {
         launch();
     }
+
 }

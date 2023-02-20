@@ -31,42 +31,6 @@
             <Font name="Franklin Gothic Medium" size="50.0" />
          </font>
       </Text>
-      <ImageView fitHeight="86.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
-         <image>
-            <Image url="@../../../../../../../../../Desktop/JAVAFX.png" />
-         </image>
-      </ImageView>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MOSTRAR TAREAS" GridPane.rowIndex="1">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font></Text>
-      <HBox fx:id="TareasMostradas" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1" GridPane.rowSpan="2">
-         <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TÍTULO">
-               <HBox.margin>
-                  <Insets right="50.0" />
-               </HBox.margin>
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="DESCRIPCIÓN">
-               <HBox.margin>
-                  <Insets right="50.0" />
-               </HBox.margin>
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ACCIONES" wrappingWidth="59.70703125">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font></Text>
-         </children>
-         <GridPane.margin>
-            <Insets />
-         </GridPane.margin>
-      </HBox>
       <VBox fx:id="CuadroCrear" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
          <children>
             <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="CREAR TAREA " wrappingWidth="98.185546875">
@@ -77,13 +41,13 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Text>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox prefHeight="64.0" prefWidth="360.0">
                <children>
                   <Label text="TITULO">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font></Label>
-                  <TextField fx:id="nombreTareaCrear">
+                  <TextField fx:id="nombreTareaCrear" prefHeight="25.0" prefWidth="269.0">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin></TextField>
@@ -95,14 +59,14 @@
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font></Label>
-                  <TextArea fx:id="descTareaCrear" prefHeight="57.0" prefWidth="166.0">
+                  <TextArea fx:id="descTareaCrear" prefHeight="100.0" prefWidth="231.0">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
                   </TextArea>
                </children>
             </HBox>
-            <Button fx:id="CREAR" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" text="CREAR" textAlignment="CENTER">
+            <Button fx:id="CREAR" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#onClickButtonCREAR" text="CREAR" textAlignment="CENTER">
                <VBox.margin>
                   <Insets left="100.0" top="10.0" />
                </VBox.margin>
@@ -125,13 +89,13 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Text>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox prefHeight="64.0" prefWidth="360.0">
                <children>
                   <Label text="TITULO">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font></Label>
-                  <TextField fx:id="nombreTareaEditar">
+                  <TextField fx:id="nombreTareaEditar" prefHeight="25.0" prefWidth="264.0">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin></TextField>
@@ -143,14 +107,14 @@
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font></Label>
-                  <TextArea fx:id="descTareaEditar" prefHeight="57.0" prefWidth="166.0">
+                  <TextArea fx:id="descTareaEditar" prefHeight="100.0" prefWidth="228.0">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
                   </TextArea>
                </children>
             </HBox>
-            <Button fx:id="EDITAR" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" text="EDITAR" textAlignment="CENTER">
+            <Button fx:id="EDITAR" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#onClickButtonEDITAR" text="EDITAR" textAlignment="CENTER">
                <VBox.margin>
                   <Insets left="100.0" top="10.0" />
                </VBox.margin>
@@ -162,6 +126,51 @@
          <GridPane.margin>
             <Insets left="100.0" />
          </GridPane.margin>
+      </VBox>
+      <VBox fx:id="TareasMostradas" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1" GridPane.rowSpan="2">
+         <children>
+            <ImageView fitHeight="86.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../../Desktop/JAVAFX.png" />
+               </image>
+               <VBox.margin>
+                  <Insets left="200.0" top="10.0" />
+               </VBox.margin>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MOSTRAR TAREAS">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="200.0" top="10.0" />
+               </VBox.margin>
+            </Text>
+            <HBox alignment="CENTER" prefHeight="38.0" prefWidth="540.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TÍTULO" textOrigin="CENTER">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="DESCRIPCIÓN">
+                     <HBox.margin>
+                        <Insets left="100.0" right="200.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ACCIONES" wrappingWidth="59.70703125">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+         </children>
       </VBox>
    </children>
 </GridPane>
