@@ -28,6 +28,7 @@ public class AppControlador {
     public VBox TareasMostradas;
 
     public HBox filaEditar;
+
     @FXML
      public void onClickButtonCREAR() throws IOException {
         // un nuevo nodo quee hace un HBox
